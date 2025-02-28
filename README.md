@@ -1,16 +1,15 @@
-[![Docker pulls](https://img.shields.io/docker/pulls/phpid/spylang.svg )](https://hub.docker.com/r/phpid/spylang)
-
+[![Status CI](https://github.com/guangrei/spy_docker/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/guangrei/spy_docker/actions)
 
 ```
-docker pull phpid/spylang
+docker pull ghcr.io/guangrei/spy_docker/spylang
 ```
 
-## pytest
+## Pytest
 
 run the test suite with command:
 
 ```
-docker run --rm -it phpid/spylang pytest
+docker run --rm -it ghcr.io/guangrei/spy_docker/spylang pytest
 ```
 
 ## Work with local `.spy` scripts
@@ -27,19 +26,19 @@ def main() -> void:
 run command:
 
 ```
-docker run --rm -it -v $(pwd):/spy/scripts phpid/spylang spy scripts/test.spy
+docker run --rm -it -v $(pwd):/spy/scripts ghcr.io/guangrei/spy_docker/spylang spy scripts/test.spy
 ```
 
 compile to executable:
 
 ```
-docker run --rm -it -v $(pwd):/spy/scripts phpid/spylang spy -c -t native scripts/test.spy
+docker run --rm -it -v $(pwd):/spy/scripts ghcr.io/guangrei/spy_docker/spylang spy -c -t native scripts/test.spy
 ```
 
 run compiled executable:
 
 ```
-docker run --rm -it -v $(pwd):/spy/scripts phpid/spylang ./scripts/test
+docker run --rm -it -v $(pwd):/spy/scripts ghcr.io/guangrei/spy_docker/spylang ./scripts/test
 ```
 
 author: guangrei.
