@@ -20,7 +20,7 @@ ENV AR="/opt/wasi-sdk/bin/llvm-ar"
 ENV RANLIB="/opt/wasi-sdk/bin/llvm-ranlib"
 
 RUN git clone https://github.com/spylang/spy.git
-RUN mkdir -p /spy/scripts && cd spy && pip install -e . && make -C spy/libspy
+RUN mkdir -p /spy/scripts && cd spy && pip install -e . && make -C spy/libspy && pytest
 VOLUME ["/spy/scripts"]
 WORKDIR /spy
 CMD ["bash"]
